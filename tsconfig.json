@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "skipLibCheck": false,
+    // emotion types css-prop is from: https://stackoverflow.com/a/67289457/2881558
+    "types": ["node", "@emotion/react/types/css-prop", "vite/client", "vite-plugin-svgr/client", "vitest/importMeta"],
+    "noErrorTruncation": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "allowJs": true,
+    "checkJs": true,
+    "sourceMap": true,
+    "incremental": true,
+    "declaration": false,
+    "importHelpers": true,
+
+    /* Linting */
+    "strict": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noImplicitOverride": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "useDefineForClassFields": true,
+    "noUncheckedIndexedAccess": true,
+    // "importsNotUsedAsValues": "error",
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+    "strictPropertyInitialization": true,
+    "forceConsistentCasingInFileNames": true,
+    "noPropertyAccessFromIndexSignature": true
+  },
+  "include": [".", "src", "./storybook"],
+  "exclude": [
+    "./build",
+    "./node_modules",
+    "./storybook-static",
+    "./.vscode",
+    "./.history",
+    "./node_modules",
+    "**/*_BACKUP_*.*",
+    "./coverage"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
