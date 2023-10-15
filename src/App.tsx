@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import { ReactComponent as ReactLogo } from './assets/react.svg'
+import ReactLogo from './assets/react.svg?react'
 import './App.css'
 import { observer } from 'mobx-react-lite'
 import { Button } from './stories/Button'

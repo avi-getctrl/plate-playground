@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { type ComponentProps } from 'react'
-import { ReactComponent as ReactLogo } from '../assets/react.svg'
+import ReactLogo from '../assets/react.svg?react'
 import { observer } from 'mobx-react-lite'
 
 interface ButtonVariants {
