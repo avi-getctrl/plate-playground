@@ -12,8 +12,9 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    'storybook-addon-designs',
+    '@storybook/addon-designs',
     'storybook-addon-pseudo-states',
+    '@storybook/addon-mdx-gfm',
   ],
   core: {
     disableTelemetry: true,
