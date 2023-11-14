@@ -52,5 +52,8 @@
     "**/*_BACKUP_*.*",
     "./coverage"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "paths": {
+    "@/*": ["./src/*"]
+  }
 }

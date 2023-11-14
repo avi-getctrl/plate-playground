@@ -2,10 +2,10 @@
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import vitePluginSvgr from 'vite-plugin-svgr'
+import path from 'node:path'
 
 // https://vitejs.dev/config/
 export default defineConfig(async function getViteConfig({ command: _command, mode: _mode, ssrBuild: _ssrBuild }) {
-  // const { default: vitePluginSri } = await import('vite-tiptop-sri')
   return {
     plugins: [
       react({
@@ -16,9 +16,12 @@ export default defineConfig(async function getViteConfig({ command: _command, mo
       }),
       vitePluginSvgr(),
       splitVendorChunkPlugin(),
-      // Although not documented, this plugin also minifies the HTML and inlines CSS.
-      // vitePluginSri({ augmentManifest: true }),
     ],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
+    },
     css: {
       devSourcemap: true,
     },

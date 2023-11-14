@@ -19,5 +19,9 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
     '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      { args: 'all', argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_', varsIgnorePattern: '^_' },
+    ],
   },
 }

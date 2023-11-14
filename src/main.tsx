@@ -22,7 +22,6 @@ render(
   <StrictMode>
     <CacheProvider {...{ value: emotionCache }}>
       <App />
-      hello
     </CacheProvider>
   </StrictMode>,
   document.getElementById('root') as HTMLElement,

@@ -1,31 +1,57 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import ReactLogo from './assets/react.svg?react'
 import './App.css'
 import { observer } from 'mobx-react-lite'
 import { Button } from './stories/Button'
+import { Plate, PlatePlugin, Value } from '@udecode/plate-common'
+import { Editor } from '../@/components/plate-ui/editor'
+import { createParagraphPlugin } from '@udecode/plate-paragraph'
+import { createBlockquotePlugin } from '@udecode/plate-block-quote'
+import { createHeadingPlugin } from '@udecode/plate-heading'
+import { createBoldPlugin, createItalicPlugin, createUnderlinePlugin } from '@udecode/plate-basic-marks'
+
+// Cannot be immutable :(
+const plugins: PlatePlugin[] = [
+  createParagraphPlugin(),
+  createBlockquotePlugin(),
+  createHeadingPlugin(),
+
+  createBoldPlugin(),
+  createItalicPlugin(),
+  createUnderlinePlugin(),
+]
+
+// Cannot be immutable :(
+const initialValue = [
+  {
+    type: 'p',
+    children: [
+      {
+        text: 'This is editable plain text with react and history plugins, just like a <textarea>!',
+      },
+    ],
+  },
+]
 
 export const App = observer(function App() {
   const [count, setCount] = useState(0)
+  const [debugValue, setDebugValue] = useState<Value>(initialValue)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <ReactLogo />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
       <div className="card">
         <Button onClick={() => setCount((count) => count + 1)}>count is {count}</Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      <Plate
+        {...{
+          plugins,
+          initialValue,
+          onChange: setDebugValue,
+        }}
+      >
+        <Editor {...{ placeholder: 'Type...' }} />
+      </Plate>
+      <h5>Debug Value</h5>
+      <code>{JSON.stringify(debugValue)}</code>
     </>
   )
 })
