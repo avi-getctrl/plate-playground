@@ -2,23 +2,29 @@ import { useState } from 'react'
 import './App.css'
 import { observer } from 'mobx-react-lite'
 import { Button } from './stories/Button'
-import { Plate, PlatePlugin, Value } from '@udecode/plate-common'
+import { Plate, Value, createPlugins } from '@udecode/plate-common'
 import { Editor } from '../@/components/plate-ui/editor'
 import { createParagraphPlugin } from '@udecode/plate-paragraph'
 import { createBlockquotePlugin } from '@udecode/plate-block-quote'
 import { createHeadingPlugin } from '@udecode/plate-heading'
 import { createBoldPlugin, createItalicPlugin, createUnderlinePlugin } from '@udecode/plate-basic-marks'
+import { createPlateUI } from '../@/plate/create-plate-ui'
 
-// Cannot be immutable :(
-const plugins: PlatePlugin[] = [
-  createParagraphPlugin(),
-  createBlockquotePlugin(),
-  createHeadingPlugin(),
+const plugins = createPlugins(
+  [
+    createParagraphPlugin(),
+    createBlockquotePlugin(),
+    createHeadingPlugin(),
 
-  createBoldPlugin(),
-  createItalicPlugin(),
-  createUnderlinePlugin(),
-]
+    createBoldPlugin(),
+    createItalicPlugin(),
+    createUnderlinePlugin(),
+  ],
+  {
+    // Pick your components in https://platejs.org/?builder=true
+    components: createPlateUI(),
+  },
+)
 
 // Cannot be immutable :(
 const initialValue = [
