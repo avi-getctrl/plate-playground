@@ -36,21 +36,25 @@ export interface ToolbarProps extends ComponentPropsWithoutRef<typeof Toolbar> {
 export const Toolbar = forwardRef<
   ElementRef<typeof Root>,
   ComponentPropsWithoutRef<typeof Root> & VariantProps<typeof toolbarVariants>
->(({ className, ...props }, ref) => <Root ref={ref} className={cn(toolbarVariants(), className)} {...props} />)
+>(function Toolbar({ className, ...props }, ref) {
+  return <Root ref={ref} className={cn(toolbarVariants(), className)} {...props} />
+})
 Toolbar.displayName = Root.displayName
 
 export const ToolbarLink = forwardRef<
   ElementRef<typeof Link>,
   ComponentPropsWithoutRef<typeof Link> & VariantProps<typeof linkVariants>
->(({ className, ...props }, ref) => <Link ref={ref} className={cn(linkVariants(), className)} {...props} />)
+>(function ToolbarLink({ className, ...props }, ref) {
+  return <Link ref={ref} className={cn(linkVariants(), className)} {...props} />
+})
 ToolbarLink.displayName = Link.displayName
 
 export const ToolbarSeparator = forwardRef<
   ElementRef<typeof ReactToolbarSeparator>,
   ComponentPropsWithoutRef<typeof ReactToolbarSeparator>
->(({ className, ...props }, ref) => (
-  <ReactToolbarSeparator ref={ref} className={cn('shrink-0 bg-border', 'my-1 w-[1px]', className)} {...props} />
-))
+>(function ToolbarSeparator({ className, ...props }, ref) {
+  return <ReactToolbarSeparator ref={ref} className={cn('shrink-0 bg-border', 'my-1 w-[1px]', className)} {...props} />
+})
 ToolbarSeparator.displayName = ReactToolbarSeparator.displayName
 
 export interface ToolbarButtonProps
@@ -74,15 +78,11 @@ export const ToolbarButton = forwardRef<ElementRef<typeof ReactToolbarButton>, T
 
     const content =
       typeof pressed === 'boolean' ? (
-        <ToolbarToggleGroup
-          type="single"
-          // value={pressed ? 'single' : undefined}
-          value={pressed ? 'single' : ''}
-        >
+        <ToolbarToggleGroup type="single" value="single">
           <ToolbarToggleItem
             ref={ref}
             className={cn(toggleVariants({ variant, size }), isDropdown && 'my-1 justify-between pr-1', className)}
-            value="single"
+            value={pressed ? 'single' : ''}
             {...props}
           >
             <div className="flex flex-1">{children}</div>
@@ -91,17 +91,18 @@ export const ToolbarButton = forwardRef<ElementRef<typeof ReactToolbarButton>, T
         </ToolbarToggleGroup>
       ) : (
         <ReactToolbarButton
-          ref={ref}
-          className={cn(toggleVariants({ variant, size }), isDropdown && 'pr-1', className)}
-          {...props}
-        >
-          {children}
-        </ReactToolbarButton>
+          {...{
+            ref,
+            className: cn(toggleVariants({ variant, size }), isDropdown && 'pr-1', className),
+            ...props,
+            children,
+          }}
+        />
       )
 
     return isLoaded && tooltip ? (
       <Tooltip>
-        <TooltipTrigger>{content}</TooltipTrigger>
+        <TooltipTrigger asChild>{content}</TooltipTrigger>
         <TooltipPortal>
           <TooltipContent>{tooltip}</TooltipContent>
         </TooltipPortal>
@@ -116,12 +117,12 @@ ToolbarButton.displayName = ReactToolbarButton.displayName
 export const ToolbarToggleItem = forwardRef<
   ElementRef<typeof ToggleItem>,
   ComponentPropsWithoutRef<typeof ToggleItem> & VariantProps<typeof toggleVariants>
->(({ className, variant, size, ...props }, ref) => (
-  <ToggleItem ref={ref} className={cn(toggleVariants({ variant, size }), className)} {...props} />
-))
+>(function ToolbarToggleItem({ className, variant, size, ...props }, ref) {
+  return <ToggleItem ref={ref} className={cn(toggleVariants({ variant, size }), className)} {...props} />
+})
 ToolbarToggleItem.displayName = ToggleItem.displayName
 
-export const ToolbarGroup = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & { noSeparator?: boolean }>(
+export const ToolbarGroup = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & { readonly noSeparator?: boolean }>(
   function ToolbarGroup({ noSeparator, className, children }, ref) {
     const childArr = Children.map(children, (c) => c)
     if (!childArr || childArr.length === 0) {

@@ -2,9 +2,9 @@ import {
   MARK_BOLD,
   // MARK_CODE,
   MARK_ITALIC,
-  MARK_STRIKETHROUGH,
-  MARK_SUBSCRIPT,
-  MARK_SUPERSCRIPT,
+  // MARK_STRIKETHROUGH,
+  // MARK_SUBSCRIPT,
+  // MARK_SUPERSCRIPT,
   MARK_UNDERLINE,
 } from '@udecode/plate-basic-marks'
 // import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
@@ -87,9 +87,9 @@ export const createPlateUI = (
     [MARK_ITALIC]: withProps(PlateLeaf, { as: 'em' }),
     [MARK_KBD]: KbdLeaf,
     // [MARK_SEARCH_HIGHLIGHT]: SearchHighlightLeaf,
-    [MARK_STRIKETHROUGH]: withProps(PlateLeaf, { as: 's' }),
-    [MARK_SUBSCRIPT]: withProps(PlateLeaf, { as: 'sub' }),
-    [MARK_SUPERSCRIPT]: withProps(PlateLeaf, { as: 'sup' }),
+    // [MARK_STRIKETHROUGH]: withProps(PlateLeaf, { as: 's' }),
+    // [MARK_SUBSCRIPT]: withProps(PlateLeaf, { as: 'sub' }),
+    // [MARK_SUPERSCRIPT]: withProps(PlateLeaf, { as: 'sup' }),
     [MARK_UNDERLINE]: withProps(PlateLeaf, { as: 'u' }),
     // [MARK_COMMENT]: CommentLeaf,
   }

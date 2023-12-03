@@ -29,7 +29,7 @@ const floatingOptions: UseVirtualFloatingOptions = {
 }
 
 export interface LinkFloatingToolbarProps {
-  state?: LinkFloatingToolbarState
+  readonly state?: LinkFloatingToolbarState
 }
 
 export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {

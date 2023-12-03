@@ -13,7 +13,7 @@ import { Toolbar, ToolbarProps } from './toolbar'
 import { ElementRef, forwardRef } from 'react'
 
 export interface FloatingToolbarProps extends ToolbarProps {
-  state?: FloatingToolbarState
+  readonly state?: FloatingToolbarState
 }
 
 export const FloatingToolbar = forwardRef<ElementRef<typeof Toolbar>, FloatingToolbarProps>(function FloatingToolbar(
