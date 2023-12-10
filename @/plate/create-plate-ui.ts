@@ -13,12 +13,12 @@ import {
 import { PlateElement, PlateLeaf, PlatePluginComponent, withProps } from '@udecode/plate-common'
 // import { ELEMENT_EXCALIDRAW } from '@udecode/plate-excalidraw'
 // import { MARK_SEARCH_HIGHLIGHT } from '@udecode/plate-find-replace'
-import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6 } from '@udecode/plate-heading'
+import { ELEMENT_H1, ELEMENT_H2 /* , ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6 */ } from '@udecode/plate-heading'
 // import { MARK_HIGHLIGHT } from '@udecode/plate-highlight'
 import { ELEMENT_HR } from '@udecode/plate-horizontal-rule'
 import { MARK_KBD } from '@udecode/plate-kbd'
 import { ELEMENT_LINK } from '@udecode/plate-link'
-import { ELEMENT_LI, ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL } from '@udecode/plate-list'
+import { ELEMENT_LI, ELEMENT_OL, /* ELEMENT_TODO_LI, */ ELEMENT_UL } from '@udecode/plate-list'
 // import { ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED } from '@udecode/plate-media'
 // import { ELEMENT_MENTION, ELEMENT_MENTION_INPUT } from '@udecode/plate-mention'
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
@@ -37,7 +37,7 @@ import { HrElement } from '../components/plate-ui/hr-element'
 // import { ImageElement } from '@/registry/default/plate-ui/image-element'
 import { KbdLeaf } from '../components/plate-ui/kbd-leaf'
 import { LinkElement } from '../components/plate-ui/link-element'
-// import { ListElement } from '../components/plate-ui/list-element'
+import { ListElement } from '../components/plate-ui/list-element'
 // import { MediaEmbedElement } from '../components/plate-ui/media-embed-element'
 // import { MentionElement } from '../components/plate-ui/mention-element'
 // import { MentionInputElement } from '../components/plate-ui/mention-input-element'
@@ -47,7 +47,7 @@ import { withPlaceholders } from '../components/plate-ui/placeholder'
 // import { TableCellElement, TableCellHeaderElement } from '../components/plate-ui/table-cell-element'
 // import { TableElement } from '../components/plate-ui/table-element'
 // import { TableRowElement } from '../components/plate-ui/table-row-element'
-import { TodoListElement } from '../components/plate-ui/todo-list-element'
+// import { TodoListElement } from '../components/plate-ui/todo-list-element'
 // import { withDraggables } from '../components/plate-ui/with-draggables'
 
 export const createPlateUI = (
@@ -62,23 +62,23 @@ export const createPlateUI = (
     [ELEMENT_HR]: HrElement,
     [ELEMENT_H1]: withProps(HeadingElement, { variant: 'h1' }),
     [ELEMENT_H2]: withProps(HeadingElement, { variant: 'h2' }),
-    [ELEMENT_H3]: withProps(HeadingElement, { variant: 'h3' }),
-    [ELEMENT_H4]: withProps(HeadingElement, { variant: 'h4' }),
-    [ELEMENT_H5]: withProps(HeadingElement, { variant: 'h5' }),
-    [ELEMENT_H6]: withProps(HeadingElement, { variant: 'h6' }),
+    // [ELEMENT_H3]: withProps(HeadingElement, { variant: 'h3' }),
+    // [ELEMENT_H4]: withProps(HeadingElement, { variant: 'h4' }),
+    // [ELEMENT_H5]: withProps(HeadingElement, { variant: 'h5' }),
+    // [ELEMENT_H6]: withProps(HeadingElement, { variant: 'h6' }),
     // [ELEMENT_IMAGE]: ImageElement,
     [ELEMENT_LI]: withProps(PlateElement, { as: 'li' }),
     [ELEMENT_LINK]: LinkElement,
     // [ELEMENT_MEDIA_EMBED]: MediaEmbedElement,
     // [ELEMENT_MENTION]: MentionElement,
     // [ELEMENT_MENTION_INPUT]: MentionInputElement,
-    // [ELEMENT_UL]: withProps(ListElement, { variant: 'ul' }),
-    // [ELEMENT_OL]: withProps(ListElement, { variant: 'ol' }),
+    [ELEMENT_UL]: withProps(ListElement, { variant: 'ul' }),
+    [ELEMENT_OL]: withProps(ListElement, { variant: 'ol' }),
     [ELEMENT_PARAGRAPH]: ParagraphElement,
     // [ELEMENT_TABLE]: TableElement,
     // [ELEMENT_TD]: TableCellElement,
     // [ELEMENT_TH]: TableCellHeaderElement,
-    [ELEMENT_TODO_LI]: TodoListElement,
+    // [ELEMENT_TODO_LI]: TodoListElement,
     // [ELEMENT_TR]: TableRowElement,
     // [ELEMENT_EXCALIDRAW]: ExcalidrawElement,
     [MARK_BOLD]: withProps(PlateLeaf, { as: 'strong' }),
@@ -104,9 +104,9 @@ export const createPlateUI = (
   if (placeholder) {
     components = withPlaceholders(components)
   }
-  if (draggable) {
-    // components = withDraggables(components)
-  }
+  // if (draggable) {
+  //   components = withDraggables(components)
+  // }
 
   return components
 }

@@ -3,7 +3,7 @@ import './App.css'
 import './styles/globals.css'
 import { observer } from 'mobx-react-lite'
 import { Button } from './stories/Button'
-import { Plate, RenderAfterEditable, Value, createPlugins } from '@udecode/plate-common'
+import { Plate, RenderAfterEditable, Value, createPlugins, findNode } from '@udecode/plate-common'
 import { Editor } from '../@/components/plate-ui/editor'
 import { createParagraphPlugin } from '@udecode/plate-paragraph'
 // import { createBlockquotePlugin } from '@udecode/plate-block-quote'
@@ -16,6 +16,10 @@ import { FloatingToolbarButtons } from '../@/components/plate-ui/floating-toolba
 import { TooltipProvider } from '../@/components/plate-ui/tooltip'
 import { createLinkPlugin } from '@udecode/plate-link'
 import { LinkFloatingToolbar } from '../@/components/plate-ui/link-floating-toolbar'
+import { ELEMENT_LI, createListPlugin } from '@udecode/plate-list'
+import { createIndentPlugin } from '@udecode/plate-indent'
+import { createIndentListPlugin } from '@udecode/plate-indent-list'
+import { createTabbablePlugin } from '@udecode/plate-tabbable'
 
 const plugins = createPlugins(
   [
@@ -29,6 +33,30 @@ const plugins = createPlugins(
     createBoldPlugin(),
     createItalicPlugin(),
     createUnderlinePlugin(),
+    createListPlugin(),
+    createIndentPlugin({
+      // inject: {
+      //   props: {
+      //     validTypes: [ELEMENT_LI],
+      //   },
+      // },
+    }),
+    createIndentListPlugin({
+      // inject: {
+      //   props: {
+      //     validTypes: [ELEMENT_LI],
+      //   },
+      // },
+    }),
+    createTabbablePlugin({
+      // options: {
+      //   query(editor): boolean {
+      //     const inList = findNode(editor, { match: { type: ELEMENT_LI } })
+      //     // const inCodeBlock = findNode(editor, { match: { type: ELEMENT_CODE_BLOCK } })
+      //     return !inList // && !inCodeBlock
+      //   },
+      // },
+    }),
   ],
   {
     // Pick your components in https://platejs.org/?builder=true
@@ -40,12 +68,11 @@ const plugins = createPlugins(
 const initialValue = [
   {
     type: 'p',
-    children: [
-      {
-        text: 'This is editable plain text with react and history plugins, just like a <textarea>!',
-      },
-    ],
+    children: [{ text: 'This is editable plain text with react and history plugins, just like a <textarea>!' }],
+    listStyleType: 'disc',
+    indent: 1,
   },
+  { type: 'p', listStyleType: 'disc', indent: 1, children: [{ text: 'Second row' }], listStart: 2 },
 ]
 
 const editableProps: EditableProps = {

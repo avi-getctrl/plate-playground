@@ -1,5 +1,5 @@
 import { type DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
-import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
+// import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
 import {
   collapseSelection,
   findNode,
@@ -10,7 +10,7 @@ import {
   toggleNodeType,
   useEditorState,
 } from '@udecode/plate-common'
-import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3 } from '@udecode/plate-heading'
+import { ELEMENT_H1, ELEMENT_H2 } from '@udecode/plate-heading'
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
 
 import { Icons } from './icons'
@@ -45,18 +45,18 @@ const items = [
     description: 'Heading 2',
     icon: Icons.h2,
   },
-  {
-    value: ELEMENT_H3,
-    label: 'Heading 3',
-    description: 'Heading 3',
-    icon: Icons.h3,
-  },
-  {
-    value: ELEMENT_BLOCKQUOTE,
-    label: 'Quote',
-    description: 'Quote (⌘+⇧+.)',
-    icon: Icons.blockquote,
-  },
+  // {
+  //   value: ELEMENT_H3,
+  //   label: 'Heading 3',
+  //   description: 'Heading 3',
+  //   icon: Icons.h3,
+  // },
+  // {
+  //   value: ELEMENT_BLOCKQUOTE,
+  //   label: 'Quote',
+  //   description: 'Quote (⌘+⇧+.)',
+  //   icon: Icons.blockquote,
+  // },
   // {
   //   value: 'ul',
   //   label: 'Bulleted list',

@@ -44,6 +44,7 @@
     "@udecode/plate-floating": "^25.0.1",
     "@udecode/plate-heading": "^25.0.1",
     "@udecode/plate-horizontal-rule": "^25.0.1",
+    "@udecode/plate-indent": "^25.0.1",
     "@udecode/plate-indent-list": "^25.0.1",
     "@udecode/plate-kbd": "^25.0.1",
     "@udecode/plate-link": "^25.0.1",

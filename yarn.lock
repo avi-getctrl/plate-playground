@@ -5974,7 +5974,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@udecode/plate-indent@npm:25.0.1":
+"@udecode/plate-indent@npm:25.0.1, @udecode/plate-indent@npm:^25.0.1":
   version: 25.0.1
   resolution: "@udecode/plate-indent@npm:25.0.1"
   dependencies:
@@ -14891,6 +14891,7 @@ __metadata:
     "@udecode/plate-floating": "npm:^25.0.1"
     "@udecode/plate-heading": "npm:^25.0.1"
     "@udecode/plate-horizontal-rule": "npm:^25.0.1"
+    "@udecode/plate-indent": "npm:^25.0.1"
     "@udecode/plate-indent-list": "npm:^25.0.1"
     "@udecode/plate-kbd": "npm:^25.0.1"
     "@udecode/plate-link": "npm:^25.0.1"

@@ -11,6 +11,10 @@ import { MarkToolbarButton } from './mark-toolbar-button'
 // import { MoreDropdownMenu } from './more-dropdown-menu'
 import { TurnIntoDropdownMenu } from './turn-into-dropdown-menu'
 import { LinkToolbarButton } from './link-toolbar-button'
+import { IndentListToolbarButton } from './indent-list-toolbar-button'
+import { ListStyleType } from '@udecode/plate-indent-list'
+import { IndentToolbarButton } from './indent-toolbar-button'
+import { OutdentToolbarButton } from './outdent-toolbar-button'
 
 export function FloatingToolbarButtons() {
   const readOnly = useEditorReadOnly()
@@ -36,6 +40,10 @@ export function FloatingToolbarButtons() {
           {/* <MarkToolbarButton nodeType={MARK_CODE} tooltip="Code (⌘+E)">
             <Icons.code />
           </MarkToolbarButton> */}
+          <IndentListToolbarButton nodeType={ListStyleType.Disc} />
+          <IndentListToolbarButton nodeType={ListStyleType.Decimal} />
+          <OutdentToolbarButton />
+          <IndentToolbarButton />
         </>
       )}
       {/* <MoreDropdownMenu /> */}
