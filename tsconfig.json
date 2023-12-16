@@ -39,7 +39,10 @@
     "useUnknownInCatchVariables": true,
     "strictPropertyInitialization": true,
     "forceConsistentCasingInFileNames": true,
-    "noPropertyAccessFromIndexSignature": true
+    "noPropertyAccessFromIndexSignature": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [".", "src", "./storybook"],
   "exclude": [
@@ -52,8 +55,5 @@
     "**/*_BACKUP_*.*",
     "./coverage"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }],
-  "paths": {
-    "@/*": ["./src/*"]
-  }
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
