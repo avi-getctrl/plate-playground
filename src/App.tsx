@@ -20,6 +20,10 @@ import { /* ELEMENT_LI, */ createListPlugin } from '@udecode/plate-list'
 import { createIndentPlugin } from '@udecode/plate-indent'
 import { createIndentListPlugin } from '@udecode/plate-indent-list'
 import { createTabbablePlugin } from '@udecode/plate-tabbable'
+import { createComboboxPlugin } from '@udecode/plate-combobox'
+import { createMentionPlugin } from '@udecode/plate-mention'
+import { MentionCombobox } from '../@/components/plate-ui/mention-combobox'
+import { MENTIONABLES } from './mentionables'
 
 const plugins = createPlugins(
   [
@@ -56,6 +60,12 @@ const plugins = createPlugins(
       //     return !inList // && !inCodeBlock
       //   },
       // },
+    }),
+    createComboboxPlugin(),
+    createMentionPlugin({
+      options: {
+        triggerPreviousCharPattern: /^$|^[\s"']$/,
+      },
     }),
   ],
   {
@@ -95,6 +105,7 @@ export const App = observer(function App() {
             {/* apps/www/src/components/context/providers.tsx */}
             <FloatingToolbarButtons />
           </FloatingToolbar>
+          <MentionCombobox items={MENTIONABLES} />
         </TooltipProvider>
       </Plate>
       <h5>Debug Value</h5>

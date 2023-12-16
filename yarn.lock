@@ -1936,6 +1936,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.14.8":
+  version: 7.23.6
+  resolution: "@babel/runtime@npm:7.23.6"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 4c4ab16f0361c59fb23956e4d0a29935f1f8a64aa8dd37876ce38355b6f4d8f0e54237aacb89c73b1532def60539ddde2d651523c8fa887b30b19a8cf0c465b0
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.18.3":
   version: 7.21.5
   resolution: "@babel/runtime@npm:7.21.5"
@@ -5730,6 +5739,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@udecode/plate-combobox@npm:27.0.0, @udecode/plate-combobox@npm:^27.0.0":
+  version: 27.0.0
+  resolution: "@udecode/plate-combobox@npm:27.0.0"
+  dependencies:
+    "@udecode/plate-common": "npm:27.0.0"
+    downshift: "npm:^6.1.12"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.94.0"
+    slate-history: ">=0.93.0"
+    slate-hyperscript: ">=0.66.0"
+    slate-react: ">=0.99.0"
+  checksum: 07656e3da6462ce4b2facc55e58aba6009b6e8d777e9f341686fb68d804e64f1781083b05d3431eb5744dea773fa62bf152b6fc8b1785ba6d85a41f820177da0
+  languageName: node
+  linkType: hard
+
 "@udecode/plate-common@npm:27.0.0, @udecode/plate-common@npm:^27.0.0":
   version: 27.0.0
   resolution: "@udecode/plate-common@npm:27.0.0"
@@ -5914,6 +5940,23 @@ __metadata:
     slate-hyperscript: ">=0.66.0"
     slate-react: ">=0.99.0"
   checksum: be2fa8865c659c3e4b08b85b044043ac8fcc82b13bc0d740543662b3e75efc5fdbca72d61cbf6b94fcdc42d14b5f4b2cf53702bb4024346f67492e323530ddc7
+  languageName: node
+  linkType: hard
+
+"@udecode/plate-mention@npm:^27.0.0":
+  version: 27.0.0
+  resolution: "@udecode/plate-mention@npm:27.0.0"
+  dependencies:
+    "@udecode/plate-combobox": "npm:27.0.0"
+    "@udecode/plate-common": "npm:27.0.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.94.0"
+    slate-history: ">=0.93.0"
+    slate-hyperscript: ">=0.66.0"
+    slate-react: ">=0.99.0"
+  checksum: 6f47e1433903d2a6b6ffcff77c8b87eb362ce7a3f0840f950f7dab2f792471921116bcbf1fdff6ba70de2b541523e4905d2b41f3aaee0ad27b49cebe8c1446da
   languageName: node
   linkType: hard
 
@@ -7335,6 +7378,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"compute-scroll-into-view@npm:^1.0.17":
+  version: 1.0.20
+  resolution: "compute-scroll-into-view@npm:1.0.20"
+  checksum: a72e2595ccab57ca61bb14b368738c7473ebb96da6c85f4dbe00cb810570f71f52d9c26b4463f6092663cbf917d0693881eef4f8e8d4204d7581a83bef082afe
+  languageName: node
+  linkType: hard
+
 "compute-scroll-into-view@npm:^3.0.2":
   version: 3.1.0
   resolution: "compute-scroll-into-view@npm:3.1.0"
@@ -7790,6 +7840,21 @@ __metadata:
   version: 16.0.3
   resolution: "dotenv@npm:16.0.3"
   checksum: d6788c8e40b35ad9a9ca29249dccf37fa6b3ad26700fcbc87f2f41101bf914f5193a04e36a3d23de70b1dcb8e5d5a3b21e151debace2c4cd08d868be500a1b29
+  languageName: node
+  linkType: hard
+
+"downshift@npm:^6.1.12":
+  version: 6.1.12
+  resolution: "downshift@npm:6.1.12"
+  dependencies:
+    "@babel/runtime": "npm:^7.14.8"
+    compute-scroll-into-view: "npm:^1.0.17"
+    prop-types: "npm:^15.7.2"
+    react-is: "npm:^17.0.2"
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    react: ">=16.12.0"
+  checksum: 1b4decc92b21c0b63061d18f924789f2a4e04a118bddfd7fe793f4a1c596fc60f0c14c929b850bdb1875ebd4600825a2b2651a277a1f5e46c7f7b3f88354dd05
   languageName: node
   linkType: hard
 
@@ -12509,7 +12574,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^17.0.1":
+"react-is@npm:^17.0.1, react-is@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 73b36281e58eeb27c9cc6031301b6ae19ecdc9f18ae2d518bdb39b0ac564e65c5779405d623f1df9abf378a13858b79442480244bd579968afc1faf9a2ce5e05
@@ -14033,7 +14098,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: bd26c22d36736513980091a1e356378e8b662ded04204453d353a7f34a4c21ed0afc59b5f90719d4ba756e581a162ecbf93118dc9c6be5acf70aa309188166ca
@@ -14619,6 +14684,7 @@ __metadata:
     "@udecode/plate-basic-marks": "npm:^27.0.0"
     "@udecode/plate-block-quote": "npm:^27.0.0"
     "@udecode/plate-break": "npm:^27.0.0"
+    "@udecode/plate-combobox": "npm:^27.0.0"
     "@udecode/plate-common": "npm:^27.0.0"
     "@udecode/plate-floating": "npm:^27.0.0"
     "@udecode/plate-heading": "npm:^27.0.0"
@@ -14628,6 +14694,7 @@ __metadata:
     "@udecode/plate-kbd": "npm:^27.0.0"
     "@udecode/plate-link": "npm:^27.0.0"
     "@udecode/plate-list": "npm:^27.0.0"
+    "@udecode/plate-mention": "npm:^27.0.0"
     "@udecode/plate-node-id": "npm:^27.0.0"
     "@udecode/plate-paragraph": "npm:^27.0.0"
     "@udecode/plate-select": "npm:^27.0.0"
