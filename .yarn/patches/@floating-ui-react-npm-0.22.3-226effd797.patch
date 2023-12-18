@@ -1,0 +1,168 @@
+diff --git a/src/hooks/useClick.d.ts b/src/hooks/useClick.d.ts
+index ad506c7572074fbfa25aec15e5e5bb6d5b0f6c40..1c1fb8ba04355144876ff0a884b702f94a113913 100644
+--- a/src/hooks/useClick.d.ts
++++ b/src/hooks/useClick.d.ts
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import type { ElementProps, FloatingContext, ReferenceType } from '../types';
++import type { ElementProps, Placement, Strategy, MiddlewareData, FloatingContext, ReferenceType } from '../types';
+ export interface Props {
+     enabled?: boolean;
+     event?: 'click' | 'mousedown';
+@@ -14,9 +14,9 @@ export interface Props {
+ export declare const useClick: <RT extends ReferenceType = ReferenceType>(context: {
+     x: number | null;
+     y: number | null;
+-    placement: import("@floating-ui/core/src/types").Placement;
+-    strategy: import("@floating-ui/core/src/types").Strategy;
+-    middlewareData: import("@floating-ui/core/src/types").MiddlewareData;
++    placement: Placement;
++    strategy: Strategy;
++    middlewareData: MiddlewareData;
+     reference: (node: RT | null) => void;
+     floating: (node: HTMLElement | null) => void;
+     isPositioned: boolean;
+diff --git a/src/hooks/useClientPoint.d.ts b/src/hooks/useClientPoint.d.ts
+index a2b5c1f21f94c85d386bd3af48fe90c74a4b3ba9..f1873c753b575b97bdf153cfe0d09e0f17579e9a 100644
+--- a/src/hooks/useClientPoint.d.ts
++++ b/src/hooks/useClientPoint.d.ts
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import type { ContextData, ElementProps, FloatingContext, ReferenceType } from '../types';
++import type { ContextData, ElementProps, Placement, Strategy, MiddlewareData, FloatingContext, ReferenceType } from '../types';
+ export interface Props {
+     enabled: boolean;
+     axis: 'x' | 'y' | 'both';
+@@ -14,9 +14,9 @@ export interface Props {
+ export declare const useClientPoint: <RT extends ReferenceType = ReferenceType>({ open, refs, dataRef, elements: { floating } }: {
+     x: number | null;
+     y: number | null;
+-    placement: import("@floating-ui/core/src/types").Placement;
+-    strategy: import("@floating-ui/core/src/types").Strategy;
+-    middlewareData: import("@floating-ui/core/src/types").MiddlewareData;
++    placement: Placement;
++    strategy: Strategy;
++    middlewareData: MiddlewareData;
+     reference: (node: RT | null) => void;
+     floating: (node: HTMLElement | null) => void;
+     isPositioned: boolean;
+diff --git a/src/hooks/useFocus.d.ts b/src/hooks/useFocus.d.ts
+index 55f551272ea4f4562c878788ba9224aa47090859..1e4cb5c3fc00b47d802e1701e1b6fd8b5b402ec5 100644
+--- a/src/hooks/useFocus.d.ts
++++ b/src/hooks/useFocus.d.ts
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import type { ElementProps, FloatingContext, ReferenceType } from '../types';
++import type { ElementProps, Placement, Strategy, MiddlewareData, FloatingContext, ReferenceType } from '../types';
+ export interface Props {
+     enabled?: boolean;
+     keyboardOnly?: boolean;
+@@ -12,9 +12,9 @@ export interface Props {
+ export declare const useFocus: <RT extends ReferenceType = ReferenceType>(context: {
+     x: number | null;
+     y: number | null;
+-    placement: import("@floating-ui/core/src/types").Placement;
+-    strategy: import("@floating-ui/core/src/types").Strategy;
+-    middlewareData: import("@floating-ui/core/src/types").MiddlewareData;
++    placement: Placement;
++    strategy: Strategy;
++    middlewareData: MiddlewareData;
+     reference: (node: RT | null) => void;
+     floating: (node: HTMLElement | null) => void;
+     isPositioned: boolean;
+diff --git a/src/hooks/useHover.d.ts b/src/hooks/useHover.d.ts
+index c264f1fcf2b3dd510812160de4b7a3fd8729b6d8..a7d4b9fe9002dd48a99507b7d221f89dfa09aadf 100644
+--- a/src/hooks/useHover.d.ts
++++ b/src/hooks/useHover.d.ts
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import type { ElementProps, FloatingContext, FloatingTreeType, ReferenceType } from '../types';
++import type { ElementProps, Placement, Strategy, MiddlewareData, FloatingContext, FloatingTreeType, ReferenceType } from '../types';
+ export interface HandleCloseFn<RT extends ReferenceType = ReferenceType> {
+     (context: FloatingContext<RT> & {
+         onClose: () => void;
+@@ -30,9 +30,9 @@ export interface Props<RT extends ReferenceType = ReferenceType> {
+ export declare const useHover: <RT extends ReferenceType = ReferenceType>(context: {
+     x: number | null;
+     y: number | null;
+-    placement: import("@floating-ui/core/src/types").Placement;
+-    strategy: import("@floating-ui/core/src/types").Strategy;
+-    middlewareData: import("@floating-ui/core/src/types").MiddlewareData;
++    placement: Placement;
++    strategy: Strategy;
++    middlewareData: MiddlewareData;
+     reference: (node: RT | null) => void;
+     floating: (node: HTMLElement | null) => void;
+     isPositioned: boolean;
+diff --git a/src/hooks/useListNavigation.d.ts b/src/hooks/useListNavigation.d.ts
+index 8bcddc8ccb43f87fbf3a68a57fc21d9b3ac8239d..557572f0f6353e89863c452169070ab68cb7e88e 100644
+--- a/src/hooks/useListNavigation.d.ts
++++ b/src/hooks/useListNavigation.d.ts
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import type { ElementProps, FloatingContext, ReferenceType } from '../types';
++import type { ElementProps, Placement, Strategy, MiddlewareData, FloatingContext, ReferenceType } from '../types';
+ export interface Props {
+     listRef: React.MutableRefObject<Array<HTMLElement | null>>;
+     activeIndex: number | null;
+@@ -27,9 +27,9 @@ export interface Props {
+ export declare const useListNavigation: <RT extends ReferenceType = ReferenceType>(context: {
+     x: number | null;
+     y: number | null;
+-    placement: import("@floating-ui/core/src/types").Placement;
+-    strategy: import("@floating-ui/core/src/types").Strategy;
+-    middlewareData: import("@floating-ui/core/src/types").MiddlewareData;
++    placement: Placement;
++    strategy: Strategy;
++    middlewareData: MiddlewareData;
+     reference: (node: RT | null) => void;
+     floating: (node: HTMLElement | null) => void;
+     isPositioned: boolean;
+diff --git a/src/hooks/useRole.d.ts b/src/hooks/useRole.d.ts
+index 9beac5a669463c9bc55247046713137644c84858..2bd5fb8e98ef8b83a5a9fcc465eaffc0e1eba03e 100644
+--- a/src/hooks/useRole.d.ts
++++ b/src/hooks/useRole.d.ts
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import type { ElementProps, FloatingContext, ReferenceType } from '../types';
++import type { ElementProps, Placement, Strategy, MiddlewareData, FloatingContext, ReferenceType } from '../types';
+ export interface Props {
+     enabled?: boolean;
+     role?: 'tooltip' | 'dialog' | 'alertdialog' | 'menu' | 'listbox' | 'grid' | 'tree';
+@@ -12,9 +12,9 @@ export interface Props {
+ export declare const useRole: <RT extends ReferenceType = ReferenceType>(context: {
+     x: number | null;
+     y: number | null;
+-    placement: import("@floating-ui/core/src/types").Placement;
+-    strategy: import("@floating-ui/core/src/types").Strategy;
+-    middlewareData: import("@floating-ui/core/src/types").MiddlewareData;
++    placement: Placement;
++    strategy: Strategy;
++    middlewareData: MiddlewareData;
+     reference: (node: RT | null) => void;
+     floating: (node: HTMLElement | null) => void;
+     isPositioned: boolean;
+diff --git a/src/hooks/useTypeahead.d.ts b/src/hooks/useTypeahead.d.ts
+index 84fc3f6b4db64fdd16e58dbe208e79b83b1676cc..5e8d9bcb46474195e568c175073b7bac27583e00 100644
+--- a/src/hooks/useTypeahead.d.ts
++++ b/src/hooks/useTypeahead.d.ts
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import type { ElementProps, FloatingContext, ReferenceType } from '../types';
++import type { ElementProps, Placement, Strategy, MiddlewareData, FloatingContext, ReferenceType } from '../types';
+ export interface Props {
+     listRef: React.MutableRefObject<Array<string | null>>;
+     activeIndex: number | null;
+@@ -19,9 +19,9 @@ export interface Props {
+ export declare const useTypeahead: <RT extends ReferenceType = ReferenceType>(context: {
+     x: number | null;
+     y: number | null;
+-    placement: import("@floating-ui/core/src/types").Placement;
+-    strategy: import("@floating-ui/core/src/types").Strategy;
+-    middlewareData: import("@floating-ui/core/src/types").MiddlewareData;
++    placement: Placement;
++    strategy: Strategy;
++    middlewareData: MiddlewareData;
+     reference: (node: RT | null) => void;
+     floating: (node: HTMLElement | null) => void;
+     isPositioned: boolean;
