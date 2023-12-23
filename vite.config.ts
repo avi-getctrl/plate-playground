@@ -5,7 +5,7 @@ import vitePluginSvgr from 'vite-plugin-svgr'
 import path from 'node:path'
 
 // https://vitejs.dev/config/
-export default defineConfig(async function getViteConfig({ command: _command, mode: _mode, ssrBuild: _ssrBuild }) {
+export default defineConfig(async function getViteConfig({ command: _command, mode: _mode }) {
   return {
     plugins: [
       react({
