@@ -46,7 +46,7 @@
     "@udecode/plate-break": "^28.0.0",
     "@udecode/plate-combobox": "^28.0.0",
     "@udecode/plate-common": "^28.0.0",
-    "@udecode/plate-floating": "^28.0.0",
+    "@udecode/plate-floating": "patch:@udecode/plate-floating@npm%3A28.0.0#~/.yarn/patches/@udecode-plate-floating-npm-28.0.0-b1ea787f1f.patch",
     "@udecode/plate-heading": "^28.0.0",
     "@udecode/plate-horizontal-rule": "^28.0.0",
     "@udecode/plate-indent": "^28.0.0",
@@ -108,6 +108,8 @@
   },
   "packageManager": "yarn@4.0.2",
   "resolutions": {
-    "@floating-ui/react@npm:^0.22.3": "patch:@floating-ui/react@npm%3A0.22.3#~/.yarn/patches/@floating-ui-react-npm-0.22.3-226effd797.patch"
+    "@floating-ui/react@npm:^0.22.3": "patch:@floating-ui/react@npm%3A0.22.3#~/.yarn/patches/@floating-ui-react-npm-0.22.3-226effd797.patch",
+    "@udecode/plate-floating@npm:28.0.0": "patch:@udecode/plate-floating@npm%3A28.0.0#~/.yarn/patches/@udecode-plate-floating-npm-28.0.0-b1ea787f1f.patch",
+    "@udecode/slate-react@npm:25.0.0": "patch:@udecode/slate-react@npm%3A25.0.0#~/.yarn/patches/@udecode-slate-react-npm-25.0.0-317fcc5a56.patch"
   }
 }

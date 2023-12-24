@@ -1,0 +1,13 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 55416e2d3e8bfbd47a04e632c773cfb5ba76407a..0f11428d0ccae9b08dde775e1354f6956afc3ba6 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -6,7 +6,7 @@ import { Path, Location, Point, Range } from 'slate';
+ import * as slate_react_dist_utils_key from 'slate-react/dist/utils/key';
+ import * as slate_react_dist_utils_dom from 'slate-react/dist/utils/dom';
+ import { DOMNode, DOMPoint } from 'slate-react/dist/utils/dom';
+-import { Value as Value$1 } from '@udecode/slate/dist';
++import { Value as Value$1 } from '@udecode/slate';
+ import { UnknownObject, Modify } from '@udecode/utils';
+ 
+ declare const CAN_USE_DOM: boolean;
