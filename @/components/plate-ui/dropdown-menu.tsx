@@ -76,6 +76,7 @@ export const DropdownMenuContent = forwardRef<ElementRef<typeof Content>, Compon
 )
 DropdownMenuContent.displayName = Content.displayName
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const menuItemVariants = cva(
   cn(
     'relative flex h-9 cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors',
@@ -175,6 +176,7 @@ export function DropdownMenuShortcut({ className, ...props }: HTMLAttributes<HTM
 }
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useOpenState() {
   const [open, setOpen] = useState(false)
 
