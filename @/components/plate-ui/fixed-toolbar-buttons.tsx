@@ -4,7 +4,7 @@ import { useEditorReadOnly } from '@udecode/plate-common'
 // import { ListStyleType } from '@udecode/plate-indent-list'
 // import { ELEMENT_IMAGE } from '@udecode/plate-media'
 
-import { Icons, iconVariants } from './icons'
+import { Icons /*, iconVariants*/ } from './icons'
 // import { AlignDropdownMenu } from '@/components/plate-ui/align-dropdown-menu'
 // import { ColorDropdownMenu } from '@/components/plate-ui/color-dropdown-menu'
 // import { CommentToolbarButton } from '@/components/plate-ui/comment-toolbar-button'
@@ -16,7 +16,7 @@ import { Icons, iconVariants } from './icons'
 // import { LinkToolbarButton } from '@/components/plate-ui/link-toolbar-button'
 
 // import { MediaToolbarButton } from '@/components/plate-ui/media-toolbar-button'
-import { MoreDropdownMenu } from './more-dropdown-menu'
+// import { MoreDropdownMenu } from './more-dropdown-menu'
 // import { OutdentToolbarButton } from '@/components/plate-ui/outdent-toolbar-button'
 // import { TableDropdownMenu } from '@/components/plate-ui/table-dropdown-menu'
 
@@ -24,7 +24,7 @@ import { MoreDropdownMenu } from './more-dropdown-menu'
 import { MarkToolbarButton } from './mark-toolbar-button'
 // import { ModeDropdownMenu } from './mode-dropdown-menu'
 import { ToolbarGroup } from './toolbar'
-import { TurnIntoDropdownMenu } from './turn-into-dropdown-menu'
+// import { TurnIntoDropdownMenu } from './turn-into-dropdown-menu'
 
 export function FixedToolbarButtons() {
   const readOnly = useEditorReadOnly()

@@ -10,7 +10,8 @@ import {
 // import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
 // import { ELEMENT_CODE_BLOCK, ELEMENT_CODE_LINE, ELEMENT_CODE_SYNTAX } from '@udecode/plate-code-block'
 // import { MARK_COMMENT } from '@udecode/plate-comments'
-import { PlateElement, PlateLeaf, PlatePluginComponent, withProps } from '@udecode/plate-common'
+import { withProps } from '@udecode/cn'
+import { PlateElement, PlateLeaf, PlatePluginComponent } from '@udecode/plate-common'
 // import { ELEMENT_EXCALIDRAW } from '@udecode/plate-excalidraw'
 // import { MARK_SEARCH_HIGHLIGHT } from '@udecode/plate-find-replace'
 import { ELEMENT_H1, ELEMENT_H2 /* , ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6 */ } from '@udecode/plate-heading'
@@ -52,7 +53,7 @@ import { withPlaceholders } from '../components/plate-ui/placeholder'
 
 export const createPlateUI = (
   overrideByKey?: Partial<Record<string, PlatePluginComponent>>,
-  { draggable, placeholder }: { placeholder?: boolean; draggable?: boolean } = {},
+  { draggable: _draggable, placeholder }: { readonly placeholder?: boolean; readonly draggable?: boolean } = {},
 ) => {
   let components: Record<string, PlatePluginComponent> = {
     // [ELEMENT_BLOCKQUOTE]: BlockquoteElement,

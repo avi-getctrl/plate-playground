@@ -1,5 +1,5 @@
 // Copied from https://github.com/udecode/plate/blob/8a9db66be875a7463e10fbbc4ff1f7bf2235abf6/apps/www/src/lib/plate/demo/values/mentionables.ts
-import { TComboboxItem } from '@udecode/plate-combobox'
+import type { TComboboxItem } from '@udecode/plate-combobox'
 
 export const MENTIONABLES: TComboboxItem[] = [
   { key: '0', text: 'Aayla Secura' },
