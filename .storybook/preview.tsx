@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import type { Preview, StoryContext } from '@storybook/react'
 import { theme } from './manager'
 import { type ComponentProps, type ElementType, StrictMode, type FC } from 'react'
+import '../src/styles/globals.css'
 
 const preview: Preview = {
   parameters: {
@@ -44,7 +45,7 @@ const emotionCache = createCache({
 })
 
 export interface PreviewMainProps extends ComponentProps<typeof PreviewMain> {
-  as?: ElementType
+  readonly as?: ElementType
 }
 
 export const decorators = [

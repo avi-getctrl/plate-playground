@@ -6,6 +6,9 @@ const config: StorybookConfig = {
     options: {},
   },
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  typescript: {
+    reactDocgen: 'react-docgen', // or false if you don't need docgen at all
+  },
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -14,10 +17,18 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-designs',
     'storybook-addon-pseudo-states',
-    '@storybook/addon-mdx-gfm',
+    {
+      name: '@storybook/addon-styling',
+      options: {
+        postCss: true,
+      },
+    },
   ],
   core: {
     disableTelemetry: true,
+  },
+  docs: {
+    autodocs: true,
   },
   // async viteFinal(viteConfig, { configType }) {
   //   // console.dir(arguments);
@@ -35,9 +46,6 @@ const config: StorybookConfig = {
   //   }
   //   return viteConfig
   // },
-  docs: {
-    autodocs: 'tag',
-  },
 }
 
 export default config
