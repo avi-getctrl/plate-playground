@@ -1,0 +1,13 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 3349fee67c3a3829cdb43c99ed027ded2feaf2ab..0331699c7c15f3175066ff7882aed569016be796 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -2,7 +2,7 @@ import { ClientRectObject } from '@floating-ui/core';
+ import { VirtualElement, UseFloatingProps, ReferenceType, UseFloatingReturn } from '@floating-ui/react';
+ export { AlignedPlacement, AutoUpdateOptions, Axis, Boundary, ClientRectObject, ComputePositionConfig, ComputePositionReturn, ContextData, Coords, DetectOverflowOptions, Dimensions, ElementContext, ElementProps, ElementRects, Elements, ExtendedRefs, FloatingContext, FloatingDelayGroup, FloatingElement, FloatingEvents, FloatingFocusManager, FloatingNode, FloatingNodeType, FloatingOverlay, FloatingPortal, FloatingTree, FloatingTreeType, Length, Middleware, MiddlewareData, MiddlewareReturn, NodeScroll, Padding, Placement, Platform, Rect, ReferenceElement, ReferenceType, RootBoundary, Side, SideObject, SizeOptions, Strategy, UseFloatingData, UseFloatingProps, UseFloatingReturn, VirtualElement, arrow, autoPlacement, autoUpdate, computePosition, detectOverflow, flip, getOverflowAncestors, hide, inline, limitShift, offset, safePolygon, shift, size, useClick, useDelayGroup, useDelayGroupContext, useDismiss, useFloating, useFloatingNodeId, useFloatingParentNodeId, useFloatingPortalNode, useFloatingTree, useFocus, useHover, useId, useInteractions, useListNavigation, useRole, useTypeahead } from '@floating-ui/react';
+ import React from 'react';
+-import * as _floating_ui_react_src_types from '@floating-ui/react/src/types';
++import * as _floating_ui_react_src_types from '@floating-ui/react';
+ import { Value, TReactEditor } from '@udecode/plate-common';
+ import { Location, Range } from 'slate';
+ 

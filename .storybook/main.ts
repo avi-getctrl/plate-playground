@@ -17,12 +17,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-designs',
     'storybook-addon-pseudo-states',
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        postCss: true,
-      },
-    },
+    '@storybook/addon-styling',
   ],
   core: {
     disableTelemetry: true,
