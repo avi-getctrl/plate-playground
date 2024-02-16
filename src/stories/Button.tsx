@@ -67,6 +67,8 @@ export const Button = styled(
   color: red;
   display: flex;
   gap: 1ch;
+  align-items: center;
+  justify-content: center;
 
   ${ButtonContent} {
     color: purple;

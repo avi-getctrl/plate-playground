@@ -49,4 +49,3 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   const Comp = asChild ? Slot : 'button'
   return <Comp className={cn(buttonVariants({ isMenu, variant, size, className }))} ref={ref} {...props} />
 })
-Button.displayName = 'Button'

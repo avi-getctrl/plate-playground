@@ -1,4 +1,4 @@
-import { Plate, RenderAfterEditable, Value, createPlugins } from '@udecode/plate-common'
+import { Plate, RenderAfterEditable, Value as PlateValue, createPlugins } from '@udecode/plate-common'
 import { Editor } from '../../@/components/plate-ui/editor'
 import { createParagraphPlugin } from '@udecode/plate-paragraph'
 // import { createBlockquotePlugin } from '@udecode/plate-block-quote'
@@ -19,7 +19,7 @@ import { createComboboxPlugin } from '@udecode/plate-combobox'
 import { createMentionPlugin } from '@udecode/plate-mention'
 import { MentionCombobox } from '../../@/components/plate-ui/mention-combobox'
 import { MENTIONABLES } from './mentionables'
-import { useState } from 'react'
+import { useState, type ComponentProps } from 'react'
 
 const plugins = createPlugins(
   [
@@ -70,8 +70,13 @@ const plugins = createPlugins(
   },
 )
 
+export function getInitialEmptyEditorValue(): PlateValue {
+  // https://github.com/ianstormtaylor/slate/issues/3625#issuecomment-616868936
+  return [{ type: 'p', children: [{ text: '' }] }]
+}
+
 // Cannot be immutable :(
-const initialValue = [
+const defaultInitialValue: PlateValue = [
   {
     type: 'p',
     children: [{ text: 'This is editable plain text with react and history plugins, just like a <textarea>!' }],
@@ -85,22 +90,42 @@ const editableProps: EditableProps = {
   placeholder: 'Type...',
 } as const
 
-export function PlateEditor() {
-  const [debugValue, setDebugValue] = useState<Value>(initialValue)
+interface PlateEditorProps extends ComponentProps<typeof Editor> {
+  readonly initialValue?: PlateValue
+}
+
+export function PlateEditor({
+  initialValue = defaultInitialValue,
+  style = { backgroundColor: 'lightgray' },
+  ...props
+}: PlateEditorProps) {
+  const [debugValue, setDebugValue] = useState(initialValue)
   return (
-    <>
+    <article
+      {...{
+        style: {
+          border: 'thin solid',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1em',
+          backgroundColor: 'lightgreen',
+          padding: '1em',
+        },
+      }}
+    >
+      <h5 {...{ style: { marginInline: '0 auto', fontWeight: 'bold' } }}>Editor:</h5>
       <Plate {...{ plugins, initialValue, onChange: setDebugValue }}>
         <TooltipProvider disableHoverableContent delayDuration={500} skipDelayDuration={0}>
-          <Editor {...editableProps} />
+          <Editor {...{ ...editableProps, style, ...props }} />
           <FloatingToolbar {...{}}>
             {/* apps/www/src/components/context/providers.tsx */}
             <FloatingToolbarButtons />
           </FloatingToolbar>
-          <MentionCombobox items={MENTIONABLES} />
+          <MentionCombobox {...{ items: MENTIONABLES }} />
         </TooltipProvider>
       </Plate>
-      <h5>Debug Value</h5>
-      <code>{JSON.stringify(debugValue)}</code>
-    </>
+      <h5 {...{ style: { marginInline: '0 auto', fontWeight: 'bold' } }}>Value:</h5>
+      <code {...{ style: { backgroundColor: 'white' } }}>{JSON.stringify(debugValue)}</code>
+    </article>
   )
 }

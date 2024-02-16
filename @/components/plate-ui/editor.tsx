@@ -51,24 +51,24 @@ export const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
   ref,
 ) {
   return (
-    <div ref={ref} className="relative w-full">
-      <PlateContent
-        className={cn(
-          editorVariants({
-            disabled,
-            focused,
-            focusRing,
-            size,
-            variant,
-          }),
-          className,
-        )}
-        disableDefaultStyles
-        readOnly={disabled ?? readOnly}
-        aria-disabled={disabled}
-        {...props}
-      />
-    </div>
+    // <div ref={ref} className="relative w-full">
+    <PlateContent
+      className={cn(
+        editorVariants({
+          disabled,
+          focused,
+          focusRing,
+          size,
+          variant,
+        }),
+        className,
+      )}
+      disableDefaultStyles
+      readOnly={disabled ?? readOnly}
+      aria-disabled={disabled}
+      ref={ref}
+      {...props}
+    />
+    // </div>
   )
 })
-Editor.displayName = 'Editor'

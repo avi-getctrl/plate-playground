@@ -24,5 +24,6 @@ module.exports = {
       'warn',
       { args: 'all', argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_', varsIgnorePattern: '^_' },
     ],
+    'react-refresh/only-export-components': 'off',
   },
 }
