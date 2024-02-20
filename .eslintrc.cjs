@@ -14,11 +14,11 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: true,
   },
   plugins: ['react-refresh'],
   rules: {
     'no-extra-semi': 'off',
-    'react-refresh/only-export-components': 'warn',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',

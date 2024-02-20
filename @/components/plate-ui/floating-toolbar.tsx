@@ -1,3 +1,4 @@
+import { cn, withRef } from '@udecode/cn'
 import { PortalBody, useComposedRef } from '@udecode/plate-common'
 import {
   flip,
@@ -7,16 +8,13 @@ import {
   useFloatingToolbarState,
 } from '@udecode/plate-floating'
 
-import { cn } from '../../lib/utils'
-
 import { Toolbar, ToolbarProps } from './toolbar'
-import { ElementRef, forwardRef } from 'react'
 
 export interface FloatingToolbarProps extends ToolbarProps {
   readonly state?: FloatingToolbarState
 }
 
-export const FloatingToolbar = forwardRef<ElementRef<typeof Toolbar>, FloatingToolbarProps>(function FloatingToolbar(
+export const FloatingToolbar = withRef<typeof Toolbar, FloatingToolbarProps>(function FloatingToolbar(
   { state, children, ...props },
   componentRef,
 ) {
@@ -42,6 +40,7 @@ export const FloatingToolbar = forwardRef<ElementRef<typeof Toolbar>, FloatingTo
   if (hidden) {
     return null
   }
+
   return (
     <PortalBody>
       <Toolbar
@@ -55,4 +54,3 @@ export const FloatingToolbar = forwardRef<ElementRef<typeof Toolbar>, FloatingTo
     </PortalBody>
   )
 })
-FloatingToolbar.displayName = 'FloatingToolbar'
