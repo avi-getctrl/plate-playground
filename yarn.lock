@@ -5633,14 +5633,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.2.55":
-  version: 18.2.55
-  resolution: "@types/react@npm:18.2.55"
+"@types/react@npm:18.2.56":
+  version: 18.2.56
+  resolution: "@types/react@npm:18.2.56"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/bf8fe19e73575489e63c0726355f164157cd69e75f2a862436ad2c0586e732cb953a7255a6bc73145e8f9506ee7a723f9a569ca9a39c53984e5b12b84e1c718a
+  checksum: 10/de0df184f2b80e8724d79eead47f23e43e91a68c0712a5d989db3f1242f2c24179cf8e26520b5a141396b55f4928ce9a6c3a3a121a98eca8e82973920209f06c
   languageName: node
   linkType: hard
 
@@ -6002,28 +6002,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@udecode/plate-common@npm:30.1.2":
-  version: 30.1.2
-  resolution: "@udecode/plate-common@npm:30.1.2"
-  dependencies:
-    "@udecode/plate-core": "npm:30.1.2"
-    "@udecode/plate-utils": "npm:30.1.2"
-    "@udecode/react-utils": "npm:29.0.1"
-    "@udecode/slate": "npm:25.0.0"
-    "@udecode/slate-react": "npm:29.0.1"
-    "@udecode/slate-utils": "npm:25.0.0"
-    "@udecode/utils": "npm:24.3.0"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-    slate: ">=0.94.0"
-    slate-history: ">=0.93.0"
-    slate-hyperscript: ">=0.66.0"
-    slate-react: ">=0.99.0"
-  checksum: 10/910ec3f2d5f5ced0042dca5d05b4a98569d3f02c07b979e58a46eac6642cfb9a17c68e7dd8c626e0351185bd78aa30b10cca2cfe353171ee9c14a3ab3bdc0d28
-  languageName: node
-  linkType: hard
-
 "@udecode/plate-common@npm:30.4.5":
   version: 30.4.5
   resolution: "@udecode/plate-common@npm:30.4.5"
@@ -6043,37 +6021,6 @@ __metadata:
     slate-hyperscript: ">=0.66.0"
     slate-react: ">=0.99.0"
   checksum: 10/707369ee0e8b6aa6b9d9f1116b2f0635a3ef041c87fbc781f99806f238f70c8935803c886efe1196af436da6d9541059867024ac446012f9b13d13514dd113ff
-  languageName: node
-  linkType: hard
-
-"@udecode/plate-core@npm:30.1.2":
-  version: 30.1.2
-  resolution: "@udecode/plate-core@npm:30.1.2"
-  dependencies:
-    "@udecode/slate": "npm:25.0.0"
-    "@udecode/slate-react": "npm:29.0.1"
-    "@udecode/slate-utils": "npm:25.0.0"
-    "@udecode/utils": "npm:24.3.0"
-    clsx: "npm:^1.2.1"
-    is-hotkey: "npm:^0.2.0"
-    jotai: "npm:^2.6.0"
-    jotai-optics: "npm:0.3.1"
-    jotai-x: "npm:^1.2.1"
-    lodash: "npm:^4.17.21"
-    nanoid: "npm:^3.3.6"
-    optics-ts: "npm:2.4.1"
-    react-hotkeys-hook: "npm:^4.4.1"
-    use-deep-compare: "npm:^1.1.0"
-    zustand: "npm:^4.4.7"
-    zustand-x: "npm:^3.0.1"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-    slate: ">=0.94.0"
-    slate-history: ">=0.93.0"
-    slate-hyperscript: ">=0.66.0"
-    slate-react: ">=0.99.0"
-  checksum: 10/449af1ca02de1bfacb5a52737330f2345cbe980a0d014d3a781a19999bd9ef202d178d23ba100a48e382f3a1f70a841c4825685e17e09524cb1ddd03f5f5a7dd
   languageName: node
   linkType: hard
 
@@ -6108,24 +6055,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@udecode/plate-floating@npm:30.1.2":
-  version: 30.1.2
-  resolution: "@udecode/plate-floating@npm:30.1.2"
-  dependencies:
-    "@floating-ui/core": "npm:^1.3.1"
-    "@floating-ui/react": "npm:^0.22.3"
-    "@udecode/plate-common": "npm:30.1.2"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-    slate: ">=0.94.0"
-    slate-history: ">=0.93.0"
-    slate-hyperscript: ">=0.66.0"
-    slate-react: ">=0.99.0"
-  checksum: 10/c42a8038b4a0db83f62910c22d2c3adc4a25950cca2b0cacbf97c019d1b582d6bbb6eecfbe1bb664337ce961e60a10f55a9fd5c376810b5e02869065bff7eba1
-  languageName: node
-  linkType: hard
-
 "@udecode/plate-floating@npm:30.4.5":
   version: 30.4.5
   resolution: "@udecode/plate-floating@npm:30.4.5"
@@ -6144,13 +6073,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@udecode/plate-floating@patch:@udecode/plate-floating@npm%3A30.1.2#~/.yarn/patches/@udecode-plate-floating-npm-30.1.2-62bb24f69c.patch":
-  version: 30.1.2
-  resolution: "@udecode/plate-floating@patch:@udecode/plate-floating@npm%3A30.1.2#~/.yarn/patches/@udecode-plate-floating-npm-30.1.2-62bb24f69c.patch::version=30.1.2&hash=09f38a"
+"@udecode/plate-floating@patch:@udecode/plate-floating@npm%3A30.4.5#~/.yarn/patches/@udecode-plate-floating-npm-30.4.5-5379b4dc0d.patch":
+  version: 30.4.5
+  resolution: "@udecode/plate-floating@patch:@udecode/plate-floating@npm%3A30.4.5#~/.yarn/patches/@udecode-plate-floating-npm-30.4.5-5379b4dc0d.patch::version=30.4.5&hash=09f38a"
   dependencies:
     "@floating-ui/core": "npm:^1.3.1"
     "@floating-ui/react": "npm:^0.22.3"
-    "@udecode/plate-common": "npm:30.1.2"
+    "@udecode/plate-common": "npm:30.4.5"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -6158,7 +6087,7 @@ __metadata:
     slate-history: ">=0.93.0"
     slate-hyperscript: ">=0.66.0"
     slate-react: ">=0.99.0"
-  checksum: 10/2cbc91acc3421471860e198da22fadee362d1da96f1a148577aa38bc599e82818b059ac3cb1a412a0330472266635e6cf7cc0e78edf22804af677b3f80771aff
+  checksum: 10/975772a8e241ff463a1171ba6edecbd2efd9c78b618f8deeb78db4c238d8bc36cadb4e56141a8b973cf0cf156eb6644c62c682db13c34bc0b12fa303dff92eeb
   languageName: node
   linkType: hard
 
@@ -6437,29 +6366,6 @@ __metadata:
   bin:
     plate-ui: dist/index.js
   checksum: 10/34102588d3fb43fe4c1bc067102b1811341e1b701370e836b133e50fca2479d4f513b3c6b97870c010135e0a96f3092006dff7679b39aea138c253bea18316b0
-  languageName: node
-  linkType: hard
-
-"@udecode/plate-utils@npm:30.1.2":
-  version: 30.1.2
-  resolution: "@udecode/plate-utils@npm:30.1.2"
-  dependencies:
-    "@udecode/plate-core": "npm:30.1.2"
-    "@udecode/react-utils": "npm:29.0.1"
-    "@udecode/slate": "npm:25.0.0"
-    "@udecode/slate-react": "npm:29.0.1"
-    "@udecode/slate-utils": "npm:25.0.0"
-    "@udecode/utils": "npm:24.3.0"
-    clsx: "npm:^1.2.1"
-    lodash: "npm:^4.17.21"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-    slate: ">=0.94.0"
-    slate-history: ">=0.93.0"
-    slate-hyperscript: ">=0.66.0"
-    slate-react: ">=0.99.0"
-  checksum: 10/d171d6a58787c6c3e8e4f3e6493e7ba059ebf69e37096b4c1e0c29aebe0de5e26a12a6e107686a6072bbaed79967b2b058fa8350fd018bb099dc55ab8a69649e
   languageName: node
   linkType: hard
 
@@ -10740,22 +10646,6 @@ __metadata:
     jotai: ">=1.11.0"
     optics-ts: "*"
   checksum: 10/1de545babf3c772cd86a483e2bccc5314495bee82916219f23cbe484a25c0ac3dabb2363edc41d38e5e15f61cc7c79d7bcc8d0847ebb921bb7f6b6785a3bc96f
-  languageName: node
-  linkType: hard
-
-"jotai-x@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "jotai-x@npm:1.2.1"
-  peerDependencies:
-    "@types/react": ">=17.0.0"
-    jotai: ">=2.0.0"
-    react: ">=17.0.0"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    react:
-      optional: true
-  checksum: 10/5d1f9743d01de014168aba273c6c02d3504f1b93f39dd405da28af906088eaf994408be7e976468cee6ea75c58a75242f150822c7637fb6ce1631bdbf626ccd6
   languageName: node
   linkType: hard
 
@@ -15095,7 +14985,7 @@ __metadata:
     "@udecode/plate-break": "npm:30.4.5"
     "@udecode/plate-combobox": "npm:30.4.5"
     "@udecode/plate-common": "npm:30.4.5"
-    "@udecode/plate-floating": "patch:@udecode/plate-floating@npm%3A30.1.2#~/.yarn/patches/@udecode-plate-floating-npm-30.1.2-62bb24f69c.patch"
+    "@udecode/plate-floating": "patch:@udecode/plate-floating@npm%3A30.4.5#~/.yarn/patches/@udecode-plate-floating-npm-30.4.5-5379b4dc0d.patch"
     "@udecode/plate-heading": "npm:30.4.5"
     "@udecode/plate-horizontal-rule": "npm:30.4.5"
     "@udecode/plate-indent": "npm:30.4.5"
