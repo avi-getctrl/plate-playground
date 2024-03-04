@@ -1,4 +1,4 @@
-import { Plate, RenderAfterEditable, Value as PlateValue, createPlugins } from '@udecode/plate-common'
+import { Plate, RenderAfterEditable, Value as PlateValue, createPlugins, PlateController } from '@udecode/plate-common'
 import { Editor } from '../../@/components/plate-ui/editor'
 import { createParagraphPlugin } from '@udecode/plate-paragraph'
 // import { createBlockquotePlugin } from '@udecode/plate-block-quote'
@@ -114,16 +114,18 @@ export function PlateEditor({
       }}
     >
       <h5 {...{ style: { marginInline: '0 auto', fontWeight: 'bold' } }}>Editor:</h5>
-      <Plate {...{ plugins, initialValue, onChange: setDebugValue }}>
-        <TooltipProvider disableHoverableContent delayDuration={500} skipDelayDuration={0}>
-          <Editor {...{ ...editableProps, style, ...props }} />
-          <FloatingToolbar {...{}}>
-            {/* apps/www/src/components/context/providers.tsx */}
-            <FloatingToolbarButtons />
-          </FloatingToolbar>
-          <MentionCombobox {...{ items: MENTIONABLES }} />
-        </TooltipProvider>
-      </Plate>
+      <PlateController>
+        <Plate {...{ plugins, initialValue, onChange: setDebugValue }}>
+          <TooltipProvider disableHoverableContent delayDuration={500} skipDelayDuration={0}>
+            <Editor {...{ ...editableProps, style, ...props }} />
+            <FloatingToolbar>
+              {/* apps/www/src/components/context/providers.tsx */}
+              <FloatingToolbarButtons />
+            </FloatingToolbar>
+            <MentionCombobox {...{ items: MENTIONABLES }} />
+          </TooltipProvider>
+        </Plate>
+      </PlateController>
       <h5 {...{ style: { marginInline: '0 auto', fontWeight: 'bold' } }}>Value:</h5>
       <code {...{ style: { backgroundColor: 'white' } }}>{JSON.stringify(debugValue)}</code>
     </article>
